@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Niche and luxury perfumery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+      background-color: #e7dada;
+      color: black;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    background-color: #e7dada;
+    padding: 10px 20px;
+    font-family: 'Times New Roman', sans-serif;
+  }
+
+  .home_bttn{
+    text-decoration: none;
+    color: #333;
+  }
+
+  .header h1 {
+    margin: 0;
+    text-align: center;
+  } 
+
+  .hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav li {
+    display: inline;
+  }
+
+  .nav a {
+    display: block;
+    color:black;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 17px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+  }
+
+  .nav a:hover {
+    background-color: #d8bcbc;
+  }
+
+    h1 {
+      margin: 0;
+    }
+
+    .filter {
+      text-align: center;
+      margin: 20px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: 1px solid white
+    }
+
+    .card h3 {
+      margin: 10px 0 5px;
+    }
+
+    .card p {
+      color: #555;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Efectul de accent când e selectat */
+    .card:hover {
+      box-shadow: 0 0 20px rgba(92, 44, 6, 0.5);
+      border: 1px solid #5c2c06;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <a class="home_bttn" href="index.html">
+      <h1>Essenza</h1>
+    </a>
+    <div class="hamburger"></div>
+    <nav class="nav" id="menu">
+        <ul>
+            <li><a href="shop.html">Produse</a></li>
+            <li><a href="despre.html">Despre noi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<header class="title">
+  <h1>🌸 Niche and luxury perfumery</h1>
+</header>
+
+<div class="filter">
+  <label for="category">Filtrează după categorie:</label>
+  <select id="category" onchange="filterProducts()">
+    <option value="All">All</option>
+    <option value="Men">Men</option>
+    <option value="Women">Women</option>
+    <option value="Unisex">Unisex</option>
+  </select>
+</div>
+
+<div class="products">
+  <!-- Bărbați -->
+  <div class="card Men" onclick="selecteazaCard(this)">
+    <h3>Dior Sauvage</h3>
+    <p>Note proaspete de bergamotă și ambroxan</p>
+  </div>
+  <div class="card Men" onclick="selecteazaCard(this)">
+    <h3>Bleu de Chanel</h3>
+    <p>Aromă lemnoasă și sofisticată</p>
+  </div>
+  <div class="card Men" onclick="selecteazaCard(this)">
+    <h3>YSL La Nuit de L’Homme</h3>
+    <p>Oriental, misterios și seducător</p>
+  </div>
+
+  <!-- Femei -->
+  <div class="card Women" onclick="selecteazaCard(this)">
+    <h3>Chanel Coco Mademoiselle</h3>
+    <p>Floral și citric</p>
+  </div>
+  <div class="card Women" onclick="selecteazaCard(this)">
+    <h3>Lancôme La Vie Est Belle</h3>
+    <p>Dulce, floral și fructat</p>
+  </div>
+  <div class="card Women" onclick="selecteazaCard(this)">
+    <h3>Dior J’adore</h3>
+    <p>Buchet floral sofisticat</p>
+  </div>
+
+  <!-- Unisex -->
+  <div class="card Unisex" onclick="selecteazaCard(this)">
+    <h3>Baccarat Rouge 540</h3>
+    <p>Senzual și modern</p>
+  </div>
+  <div class="card Unisex" onclick="selecteazaCard(this)">
+    <h3>Tom Ford Tobacco Vanille</h3>
+    <p>Cald, condimentat și bogat</p>
+  </div>
+  <div class="card Unisex" onclick="selecteazaCard(this)">
+    <h3>Jo Malone Wood Sage & Sea Salt</h3>
+    <p>Proaspăt, marin, natural</p>
+  </div>
+</div>
+
+<script>
+  function filterProducts() {
+    const category = document.getElementById('category').value;
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      card.classList.remove('hidden');
+      if (category !== 'All' && !card.classList.contains(category)) {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  function selecteazaCard(card) {
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+  }
+</script>
+
+</body>
+</html>
