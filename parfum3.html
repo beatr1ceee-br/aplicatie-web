@@ -5,14 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Givenchy L’Interdit Eau de Parfum Rouge</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
+   * {
+      margin: 0;
     }
 
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      background-color: #e7dada;
+      padding: 10px 20px;
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    .home_bttn {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .header h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav li {
+      display: inline;
+    }
+
+    .nav a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav a:hover {
+      background-color: #d8bcbc;
+    }
+
+    /* Responsivitate pentru hamburger */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        width: 100%;
+      }
+
+      .nav.open {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* STILURI PRODUS */
     .container {
+      padding: 40px;
       display: flex;
       gap: 40px;
+    }
+
+    .nume_parfum {
+      padding: 40px 40px 0px 40px;
     }
 
     .thumbnails {
@@ -40,59 +118,64 @@
     }
 
     .info {
-    display: flex;
-    flex-direction: column;     /* Elemente una sub alta */
-    align-items: center;        /* Centrează pe orizontală */
-    justify-content: center;    /* Centrează pe verticală */
-    height: 100%;               /* Important pentru a funcționa centrare verticală */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: 'Times New Roman', serif;
+}
+
+.info p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.volum-optiuni label {
+  display: block;
+  margin: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.volum-optiuni input[type="radio"] {
+  margin-right: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: gray;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.detalii-volum {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.detalii-volum li {
+  margin: 5px 0;
+}
+
+.btn {
+  background-color: #b30000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #800000;
 }
 
 
-    h1 {
-      font-size: 24px;
-    }
-
-    label, select {
-      font-size: 16px;
-    }
-
-    .price {
-      font-size: 20px;
-      color: #b30000;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .old-price {
-      text-decoration: line-through;
-      color: gray;
-      margin-left: 10px;
-      font-size: 16px;
-    }
-
-    .btn {
-      background-color: #b30000;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 15px;
-    }
-
-    .btn:hover {
-      background-color: #800000;
-    }
-
-    .section {
-      margin-top: 40px;
-      max-width: 700px;
-    }
-
-    .section h2 {
-      font-size: 18px;
-      margin-bottom: 10px;
-    }
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -116,8 +199,20 @@
   </style>
 </head>
 <body>
-
-<h1>Givenchy L’Interdit Eau de Parfum Rouge</h1>
+  <header class="header">
+    <a class="home_bttn" href="index.html">
+      <h1>Essenza</h1>
+    </a>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <nav class="nav" id="menu">
+      <ul>
+        <li><a href="shop.html">Produse</a></li>
+        <li><a href="despre.html">Despre noi</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<h1 class="nume_parfum">L’Interdit Eau de Parfum Rouge</h1>
 
 <div class="container">
   <div class="thumbnails">
