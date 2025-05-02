@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>YSL Libre Intense</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YSL Libre Intense - Pagina produs</title>
   <style>
-    /* STILURI HEADER */
-   
- * {
+    * {
       margin: 0;
     }
 
@@ -63,7 +61,6 @@
       background-color: #d8bcbc;
     }
 
-    /* Responsivitate pentru hamburger */
     @media (max-width: 768px) {
       .hamburger {
         display: block;
@@ -84,119 +81,145 @@
       }
     }
 
-    /* STILURI PRODUS */
-    .container {
-      padding: 40px;
+    /* Restul stilurilor existente în codul original */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    .product-container {
       display: flex;
-      gap: 40px;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 30px;
+      justify-content: center;
     }
 
-    .nume_parfum {
-      padding: 40px 40px 0px 40px;
-    }
-
-    .thumbnails {
+    .gallery {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 10px;
     }
 
-    .thumbnails img {
-      width: 100px;
-      height: auto;
-      cursor: pointer;
+    .gallery img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
       border: 2px solid transparent;
-      transition: border 0.2s;
+      cursor: pointer;
+      border-radius: 5px;
     }
 
-    .thumbnails img:hover,
-    .thumbnails img.active {
-      border: 2px solid #b30000;
+    .gallery img.active {
+      border: 2px solid black;
     }
 
-    .main-image img {
-      width: 500px;
-      height: auto;
+    .main-image {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 1;
     }
 
-    .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-family: 'Times New Roman', serif;
-}
+    .main-image.fade-out {
+      opacity: 0;
+    }
 
-.info p {
-  font-size: 16px;
-  margin: 5px 0;
-}
+    .details {
+      max-width: 500px;
+    }
 
-.volum-optiuni label {
-  display: block;
-  margin: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-}
+    .brand {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
 
-.volum-optiuni input[type="radio"] {
-  margin-right: 10px;
-}
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+    }
 
-.old-price {
-  text-decoration: line-through;
-  color: gray;
-  margin-left: 10px;
-  font-size: 14px;
-}
+    .stars {
+      color: gold;
+      margin: 10px 0;
+    }
 
-.detalii-volum {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  font-size: 14px;
-}
+    .description {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
 
-.detalii-volum li {
-  margin: 5px 0;
-}
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-.btn {
-  background-color: #b30000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
-}
+    .price-per-100ml {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
 
-.btn:hover {
-  background-color: #800000;
-}
+    .select-section {
+      margin: 20px 0;
+    }
 
+    select {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
+    .add-to-cart {
+      width: 100%;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 
-      .main-image img {
-        width: 100%;
-        max-width: 350px;
-      }
+    .tabs-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
 
-      .thumbnails {
-        flex-direction: row;
-        justify-content: center;
-      }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+    }
 
-      .thumbnails img {
-        width: 70px;
-      }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid black;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
@@ -215,89 +238,98 @@
       </ul>
     </nav>
   </header>
-
-  <!-- Conținutul paginii produsului -->
-  <h1 class="nume_parfum">Yves Saint Laurent – Libre Intense</h1>
-
-  <div class="container">
-    <div class="thumbnails">
-      <img src="images/ysl 2.jpg" alt="Miniatură 1" onclick="schimbaImagine(this)" class="active">
-      <img src="images/ysl 3.jpg" alt="Miniatură 2" onclick="schimbaImagine(this)">
-      <img src="images/ysl 4.jpg" alt="Miniatură 3" onclick="schimbaImagine(this)">
-      <img src="images/ysl 5.jpg" alt="Miniatură 4" onclick="schimbaImagine(this)">
+  <div class="product-container">
+    <!-- GALLERY -->
+    <div class="gallery">
+      <img src="images/ysl 1.jpg" class="thumb active" onclick="changeImage('images/ysl 1.jpg')">
+      <img src="images/ysl 2.jpg" class="thumb active" onclick="changeImage('images/ysl 2.jpg')">
+      <img src="images/ysl 3.jpg" class="thumb" onclick="changeImage('images/ysl 3.jpg')">
+      <img src="images/ysl 4.jpg" class="thumb" onclick="changeImage('images/ysl 4.jpg')">
+      <img src="images/ysl 5.jpg" class="thumb" onclick="changeImage('images/ysl 5.jpg')">
     </div>
 
-    <div class="main-image">
-      <img id="imagine-principala" src="images/ysl 1.jpg" alt="Parfum YSL Libre Intense">
+    <!-- MAIN IMAGE -->
+    <div>
+      <img src="images/ysl 1.jpg" id="mainImage" class="main-image" alt="Parfum YSL">
     </div>
 
-    <div class="info">
-      <p><strong>Brand:</strong> Yves Saint Laurent</p>
-      <p><strong>Tip:</strong> Apă de parfum pentru femei</p>
+    <!-- DETAILS -->
+    <div class="details">
+      <div class="brand">Yves Saint Laurent</div>
+      <h1 class="title">Libre Intense Eau de Parfum</h1>
+      <div class="stars">★★★★★</div>
+      <p class="description">
+        O reinterpretare intensă a parfumului iconic Libre: senzual, cald, puternic – cu lavandă franțuzească și floare de portocal marocan.
+      </p>
+      <div class="price" id="pretAfisat">649,00 Lei</div>
+      <div class="price-per-100ml" id="pret100ml">1.298,00 Lei / 100ml</div>
 
-      <label for="volum">Alege volumul:</label>
-      <select id="volum" onchange="actualizeazaPretul()">
-        <option value="50">50 ml</option>
-        <option value="90">90 ml</option>
-      </select>
-
-      <div class="price">
-        <span id="pret-curent">649,00 RON</span>
-        <span class="old-price" id="pret-vechi">799,00 RON</span>
+      <div class="select-section">
+        <label for="cantitate">Selectează cantitatea:</label>
+        <select id="cantitate" onchange="actualizeazaPretul()">
+          <option value="50">50 ml</option>
+          <option value="90">90 ml</option>
+        </select>
       </div>
 
-      <button class="btn" onclick="adaugaInCos()">Adaugă în coș</button>
+      <button class="add-to-cart">Adaugă în coș</button>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Descriere</h2>
-    <p>
-      Libre Intense de la Yves Saint Laurent este o reinterpretare intensă a parfumului iconic Libre. O aromă senzuală, caldă și puternică, cu o combinație îndrăzneață de lavandă franțuzească și floare de portocal marocan.
-    </p>
-  </div>
-
-  <div class="section">
-    <h2>Ingrediente</h2>
-    <p>
-      Note de vârf: lavandă, mandarină, bergamotă<br>
-      Note de mijloc: floare de portocal, iasomie<br>
-      Note de bază: vanilie, ambra, tonka, vetiver
-    </p>
+  <!-- TABS -->
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="tab active" onclick="openTab('descriere')">Descriere</div>
+      <div class="tab" onclick="openTab('ingrediente')">Ingrediente</div>
+    </div>
+    <div id="descriere" class="tab-content active">
+      <p>
+        Libre Intense de la Yves Saint Laurent este o reinterpretare intensă a parfumului Libre. O aromă senzuală și caldă, cu lavandă și floare de portocal.
+      </p>
+    </div>
+    <div id="ingrediente" class="tab-content">
+      <p>
+        Note de vârf: lavandă, mandarină, bergamotă<br>
+        Note de mijloc: floare de portocal, iasomie<br>
+        Note de bază: vanilie, ambra, tonka, vetiver
+      </p>
+    </div>
   </div>
 
   <script>
     const preturi = {
-      50: { curent: "649,00 RON", vechi: "799,00 RON" },
-      90: { curent: "849,00 RON", vechi: "999,00 RON" }
+      50: { pret: "649,00 Lei", per100: "1.298,00 Lei / 100ml" },
+      90: { pret: "849,00 Lei", per100: "943,33 Lei / 100ml" }
     };
 
-    function actualizeazaPretul() {
-      const volum = document.getElementById("volum").value;
-      document.getElementById("pret-curent").textContent = preturi[volum].curent;
-      document.getElementById("pret-vechi").textContent = preturi[volum].vechi;
-    }
-
-    function schimbaImagine(img) {
-      const imaginePrincipala = document.getElementById("imagine-principala");
-      imaginePrincipala.style.opacity = 0;
+    function changeImage(src) {
+      const mainImage = document.getElementById('mainImage');
+      mainImage.classList.add('fade-out');
       setTimeout(() => {
-        imaginePrincipala.src = img.src;
-        imaginePrincipala.style.opacity = 1;
+        mainImage.src = src;
+        mainImage.classList.remove('fade-out');
       }, 200);
 
-      document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove("active"));
-      img.classList.add("active");
+      document.querySelectorAll('.thumb').forEach(img => {
+        img.classList.remove('active');
+        if (img.src.includes(src)) {
+          img.classList.add('active');
+        }
+      });
     }
 
-    // Funcționalitate pentru meniul hamburger
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
+    function actualizeazaPretul() {
+      const cantitate = document.getElementById('cantitate').value;
+      document.getElementById('pretAfisat').textContent = preturi[cantitate].pret;
+      document.getElementById('pret100ml').textContent = preturi[cantitate].per100;
+    }
 
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('open');
-    });
+    function openTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
   </script>
-
 </body>
 </html>

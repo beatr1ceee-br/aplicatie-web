@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Despre noi | Parfumuri Elegante</title>
+  <style>
+     * {
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      background-color: #e7dada;
+      padding: 10px 20px;
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    .home_bttn {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .header h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav li {
+      display: inline;
+    }
+
+    .nav a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav a:hover {
+      background-color: #d8bcbc;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        width: 100%;
+      }
+
+      .nav.open {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fffaf5;
+      color: #3a2c27;
+    
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px;
+    }
+    
+    h1 {
+      color: #333;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    p {
+      line-height: 1.8;
+      font-size: 18px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #a46940;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+    .footer {
+    background-color:#e7dada;
+    text-align: center;
+    padding: 14px;
+    margin-top: 33px;
+    font-family: 'Times', serif;
+}
+  </style>
+</head>
+<body>
+    <header class="header">
+        <a class="home_bttn" href="index.html">
+          <h1>Essenza</h1>
+        </a>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <nav class="nav" id="menu">
+          <ul>
+            <li><a href="shop.html">Produse</a></li>
+            <li><a href="despre.html">Despre noi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+  <div class="container">
+    <h1>Despre noi</h1>
+
+    <div class="section">
+      <p>
+        <span class="highlight">🌸 Essenza</span> s-a născut din pasiunea pentru rafinament și dorința de a oferi o experiență olfactivă memorabilă.
+        Din 2025, aducem în Austria parfumuri de lux, inspirate de cele mai fine esențe ale lumii.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        Selectăm cu grijă fiecare produs din colecția noastră, colaborând cu parfumieri talentați și branduri recunoscute internațional.
+        Fiecare sticlă de parfum spune o poveste — a eleganței, a emoției și a identității personale.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        Misiunea noastră este simplă: să transformăm rutina zilnică într-un ritual de răsfăț și expresie personală. Credem că un parfum potrivit poate schimba ziua, starea și chiar încrederea în sine.
+      </p>
+    </div>
+
+    <div class="section">
+      <p>
+        Ne dorim să fii parte din povestea noastră. Indiferent dacă ești în căutarea unui parfum pentru tine sau a unui cadou special, suntem aici să te ajutăm cu pasiune, grijă și profesionalism.
+      </p>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 Magazin Parfumuri. Toate drepturile rezervate.</p>
+</footer>
+</body>
+</html>

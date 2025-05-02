@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xerjoff Newceuls Eau de Parfum</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Xerjoff Newceuls - Pagina produs</title>
   <style>
-  * {
-      margin: 0;
-    }
+    * { margin: 0; }
 
     .header {
       display: flex;
@@ -61,149 +59,159 @@
       background-color: #d8bcbc;
     }
 
-    /* Responsivitate pentru hamburger */
     @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-
-      .nav {
-        display: none;
-        width: 100%;
-      }
-
-      .nav.open {
-        display: block;
-      }
-
+      .hamburger { display: block; }
+      .nav { display: none; width: 100%; }
+      .nav.open { display: block; }
       .nav ul {
         flex-direction: column;
         align-items: flex-start;
       }
     }
 
-    /* STILURI PRODUS */
-    .container {
-      padding: 40px;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    .product-container {
       display: flex;
-      gap: 40px;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 30px;
+      justify-content: center;
     }
 
-    .nume_parfum {
-      padding: 40px 40px 0px 40px;
-    }
-
-    .thumbnails {
+    .gallery {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 10px;
     }
 
-    .thumbnails img {
-      width: 100px;
-      height: auto;
-      cursor: pointer;
+    .gallery img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
       border: 2px solid transparent;
-      transition: border 0.2s;
+      cursor: pointer;
+      border-radius: 5px;
     }
 
-    .thumbnails img:hover,
-    .thumbnails img.active {
-      border: 2px solid #b30000;
+    .gallery img.active {
+      border: 2px solid black;
     }
 
-    .main-image img {
-      width: 500px;
-      height: auto;
+    .main-image {
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 1;
     }
 
-    .info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-family: 'Times New Roman', serif;
-}
+    .main-image.fade-out { opacity: 0; }
 
-.info p {
-  font-size: 16px;
-  margin: 5px 0;
-}
+    .details {
+      max-width: 500px;
+    }
 
-.volum-optiuni label {
-  display: block;
-  margin: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-}
+    .brand {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
 
-.volum-optiuni input[type="radio"] {
-  margin-right: 10px;
-}
+    .title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 0;
+    }
 
-.old-price {
-  text-decoration: line-through;
-  color: gray;
-  margin-left: 10px;
-  font-size: 14px;
-}
+    .stars {
+      color: gold;
+      margin: 10px 0;
+    }
 
-.detalii-volum {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  font-size: 14px;
-}
+    .description {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
 
-.detalii-volum li {
-  margin: 5px 0;
-}
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+    }
 
-.btn {
-  background-color: #b30000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color 0.3s ease;
-}
+    .price-per-100ml {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 20px;
+    }
 
-.btn:hover {
-  background-color: #800000;
-}
+    .select-section {
+      margin: 20px 0;
+    }
 
+    select {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      width: 100%;
+    }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
+    .add-to-cart {
+      width: 100%;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
 
-      .main-image img {
-        width: 100%;
-        max-width: 350px;
-      }
+    .tabs-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 40px;
+    }
 
-      .thumbnails {
-        flex-direction: row;
-        justify-content: center;
-      }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+    }
 
-      .thumbnails img {
-        width: 70px;
-      }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+    }
+
+    .tab.active {
+      border-bottom: 3px solid black;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px 0;
+    }
+
+    .tab-content.active {
+      display: block;
     }
   </style>
 </head>
 <body>
   <!-- Bara de navigare -->
   <header class="header">
-    <a class="home_bttn" href="index.html">
-      <h1>Essenza</h1>
-    </a>
+    <a class="home_bttn" href="index.html"><h1>Essenza</h1></a>
     <div class="hamburger" id="hamburger">&#9776;</div>
     <nav class="nav" id="menu">
       <ul>
@@ -214,81 +222,91 @@
     </nav>
   </header>
 
-<h1 class="nume_parfum">Xerjoff Newceuls Eau de Parfum</h1>
-
-<div class="container">
-  <div class="thumbnails">
-    <img src="images\xerjoff.jpg"   alt="Miniatură 1" onclick="schimbaImagine(this)" class="active">
-    <img src="images\xerjoff_1.jpg" alt="Miniatură 2" onclick="schimbaImagine(this)">
-    <img src="images\xerjoff_2.jpg" alt="Miniatură 3" onclick="schimbaImagine(this)">
-  </div>
-
-  <div class="main-image">
-    <img id="imagine-principala" src="images/xerjoff.jpg" alt="Xerjoff Newceuls Eau de Parfum">
-  </div>
-
-  <div class="info">
-    <p><strong>Brand:</strong> Xerjoff</p>
-    <p><strong>Tip:</strong> Apă de parfum unisex</p>
-
-    <label for="volum">Alege volumul:</label>
-    <select id="volum" onchange="actualizeazaPretul()">
-      <option value="30">30 ml</option>
-      <option value="50">50 ml</option>
-      <option value="100">100 ml</option>
-    </select>
-
-    <div class="price">
-      <span id="pret-curent">489,00 RON</span>
-      <span class="old-price" id="pret-vechi">565,00 RON</span>
+  <div class="product-container">
+    <div class="gallery">
+      <img src="images/xerjoff.jpg" class="thumb active" onclick="changeImage('images/xerjoff.jpg')">
+      <img src="images/xerjoff_1.jpg" class="thumb active" onclick="changeImage('images/xerjoff_1.jpg')">
+      <img src="images/xerjoff_2.jpg" class="thumb" onclick="changeImage('images/xerjoff_2.jpg')">
     </div>
 
-    <button class="btn" onclick="adaugaInCos()">Adaugă în coș</button>
+    <div>
+      <img src="images/xerjoff.jpg" id="mainImage" class="main-image" alt="Xerjoff Newceuls">
+    </div>
+
+    <div class="details">
+      <div class="brand">Xerjoff</div>
+      <h1 class="title">Newceuls Eau de Parfum</h1>
+      <div class="stars">★★★★★</div>
+      <p class="description">
+        Xerjoff Newceuls este un parfum rafinat și modern ce combină notele elegante cu o compoziție vibrantă, luxurioasă. Ideal pentru cei care caută unicitate și rafinament.
+      </p>
+      <div class="price" id="pretAfisat">1.150,00 Lei</div>
+      <div class="price-per-100ml" id="pret100ml">1.437,50 Lei / 100ml</div>
+
+      <div class="select-section">
+        <label for="cantitate">Selectează cantitatea:</label>
+        <select id="cantitate" onchange="actualizeazaPretul()">
+          <option value="80">80 ml</option>
+          <option value="50">50 ml</option>
+        </select>
+      </div>
+
+      <button class="add-to-cart">Adaugă în coș</button>
+    </div>
   </div>
-</div>
 
-<div class="section">
-  <h2>Descriere</h2>
-  <p>
-    Xerjoff Newceuls este un parfum sofisticat, ce combină rafinamentul italian cu note orientale prețioase. 
-    Acest elixir olfactiv este destinat celor care își doresc să iasă din tipare și să lase o amprentă memorabilă în urma lor.
-  </p>
-</div>
+  <div class="tabs-container">
+    <div class="tabs">
+      <div class="tab active" onclick="openTab('descriere')">Descriere</div>
+      <div class="tab" onclick="openTab('ingrediente')">Ingrediente</div>
+    </div>
+    <div id="descriere" class="tab-content active">
+      <p>
+        Newceuls de la Xerjoff este o expresie a eleganței pure, cu un amestec de note florale, citrice și lemnoase, potrivit pentru ocazii speciale sau purtare zilnică.
+      </p>
+    </div>
+    <div id="ingrediente" class="tab-content">
+      <p>
+        Note de vârf: bergamotă, lămâie siciliană<br>
+        Note de mijloc: iasomie, iris, trandafir<br>
+        Note de bază: ambroxan, lemn de santal, mosc alb
+      </p>
+    </div>
+  </div>
 
-<div class="section">
-  <h2>Ingrediente</h2>
-  <p>
-    Note de vârf: bergamotă, șofran<br>
-    Note de mijloc: iasomie, ambră<br>
-    Note de bază: mosc alb, lemn de cedru, oud
-  </p>
-</div>
+  <script>
+    const preturi = {
+      80: { pret: "1.150,00 Lei", per100: "1.437,50 Lei / 100ml" },
+      50: { pret: "849,00 Lei", per100: "1.698,00 Lei / 100ml" }
+    };
 
-<script>
-  const preturi = {
-    30: { curent: "489,00 RON", vechi: "565,00 RON" },
-    50: { curent: "679,00 RON", vechi: "749,00 RON" },
-    100: { curent: "899,00 RON", vechi: "995,00 RON" }
-  };
+    function changeImage(src) {
+      const mainImage = document.getElementById('mainImage');
+      mainImage.classList.add('fade-out');
+      setTimeout(() => {
+        mainImage.src = src;
+        mainImage.classList.remove('fade-out');
+      }, 200);
+      document.querySelectorAll('.thumb').forEach(img => {
+        img.classList.remove('active');
+        if (img.src.includes(src)) {
+          img.classList.add('active');
+        }
+      });
+    }
 
-  function actualizeazaPretul() {
-    const volum = document.getElementById("volum").value;
-    document.getElementById("pret-curent").textContent = preturi[volum].curent;
-    document.getElementById("pret-vechi").textContent = preturi[volum].vechi;
-  }
+    function actualizeazaPretul() {
+      const cantitate = document.getElementById('cantitate').value;
+      document.getElementById('pretAfisat').textContent = preturi[cantitate].pret;
+      document.getElementById('pret100ml').textContent = preturi[cantitate].per100;
+    }
 
-  function schimbaImagine(img) {
-    const imaginePrincipala = document.getElementById("imagine-principala");
-    imaginePrincipala.src = img.src;
-
-    document.querySelectorAll('.thumbnails img').forEach(el => el.classList.remove("active"));
-    img.classList.add("active");
-  }
-
-  function adaugaInCos() {
-    alert("Produsul a fost adăugat în coș!");
-  }
-</script>
-
+    function openTab(tabId) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelector(`[onclick="openTab('${tabId}')"]`).classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    }
+  </script>
 </body>
 </html>

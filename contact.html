@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactează-ne | Parfumuri Elegante</title>
+  <style>
+     * {
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #333;
+      background-color: #e7dada;
+      padding: 10px 20px;
+      font-family: 'Times New Roman', sans-serif;
+    }
+
+    .home_bttn {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .header h1 {
+      margin: 0;
+      text-align: center;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav li {
+      display: inline;
+    }
+
+    .nav a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 17px;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .nav a:hover {
+      background-color: #d8bcbc;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav {
+        display: none;
+        width: 100%;
+      }
+
+      .nav.open {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff9f9;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-info, .contact-form {
+      margin-top: 30px;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    }
+    .contact-info p {
+      line-height: 1.8;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 9px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    form button {
+      background-color: #ffcee8d2;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #d1a6c1;
+    }
+    .footer {
+    background-color:#e7dada;
+    text-align: center;
+    padding: 15px;
+    margin-top: 33px;
+    font-family: 'Times', serif;
+}
+  </style>
+</head>
+<body>
+    <header class="header">
+        <a class="home_bttn" href="index.html">
+          <h1>Essenza</h1>
+        </a>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+        <nav class="nav" id="menu">
+          <ul>
+            <li><a href="shop.html">Produse</a></li>
+            <li><a href="despre.html">Despre noi</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+  <div class="container">
+    
+    <div class="contact-info">
+      <h2>Informații de contact</h2>
+      <p><strong>Email:</strong> contact@perfumeryessenza.at</p>
+      <p><strong>Telefon:</strong> +43 (0)1 9289 266</p>
+      <p><strong>Adresă:</strong> Strada Kohlmarkt 15, Viena, Austria</p>
+      <p><strong>Program:</strong> Luni - Vineri: 09:00 - 18:00</p>
+    </div>
+
+    <div class="contact-form">
+      <h2>Trimite-ne un mesaj</h2>
+      <form action="/trimite-mesaj" method="POST">
+        <input type="text" name="nume" placeholder="Numele tău" required>
+        <input type="email" name="email" placeholder="Adresa de email" required>
+        <textarea name="mesaj" rows="5" placeholder="Mesajul tău..." required></textarea>
+        <button type="submit">Trimite mesajul</button>
+      </form>
+    </div>
+  </div>
+  <footer class="footer">
+    <p>&copy; 2025 Magazin Parfumuri. Toate drepturile rezervate.</p>
+</footer>
+</body>
+</html>

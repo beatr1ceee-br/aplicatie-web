@@ -95,6 +95,13 @@
       max-width: 1200px;
       margin: auto;
     }
+    .card-img {
+     width: 100%;
+     height: auto;
+     border-radius: 8px;
+     object-fit: cover;
+    margin-bottom: 10px;
+    }
 
     .card {
       background: white;
@@ -170,8 +177,24 @@
     <h3>YSL La Nuit de L’Homme</h3>
     <p>Oriental, misterios și seducător</p>
   </div>
-
+  <div class="card Men" onclick="selecteazaCard(this)">
+    <h3>Armani Acqua di Giò</h3>
+    <p>Proaspăt, acvatic și rafinat</p>
+  </div>
+  <div class="card Men" onclick="selecteazaCard(this)">
+    <h3>Versace Eros</h3>
+    <p>Aromat, vibrant și seducător</p>
+  </div>
+  
   <!-- Femei -->
+  <div class="card Women" onclick="selecteazaCard(this)">
+    <h3>YSL Black Opium</h3>
+    <p>Dulce, intens și misterios</p>
+  </div>
+  <div class="card Women" onclick="selecteazaCard(this)">
+    <h3>Gucci Bloom</h3>
+    <p>Floral, elegant și feminin</p>
+  </div>
   <div class="card Women" onclick="selecteazaCard(this)">
     <h3>Chanel Coco Mademoiselle</h3>
     <p>Floral și citric</p>
@@ -187,6 +210,14 @@
 
   <!-- Unisex -->
   <div class="card Unisex" onclick="selecteazaCard(this)">
+    <h3>Maison Margiela Replica By the Fireplace</h3>
+    <p>Cald, lemnos și reconfortant</p>
+  </div>
+  <div class="card Unisex" onclick="selecteazaCard(this)">
+    <h3>Le Labo Santal 33</h3>
+    <p>Lemnos, pământiu și sofisticat</p>
+  </div>
+  <div class="card Unisex" onclick="selecteazaCard(this)">
     <h3>Baccarat Rouge 540</h3>
     <p>Senzual și modern</p>
   </div>
@@ -198,7 +229,7 @@
     <h3>Jo Malone Wood Sage & Sea Salt</h3>
     <p>Proaspăt, marin, natural</p>
   </div>
-</div>
+</div> 
 
 <script>
   function filterProducts() {
